@@ -1,6 +1,7 @@
-// src/data/plan.js
 import React from "react";
-import { Flame, Zap, RefreshCcw } from "lucide-react";
+import { Flame, Zap, RefreshCcw, Link as LinkIcon } from "lucide-react";
+
+export const STORAGE_KEY = "fatloss_6day_progress_v1";
 
 const yt = (q) => `https://www.youtube.com/results?search_query=${encodeURIComponent(q)}`;
 const g = (q) => `https://www.google.com/search?q=${encodeURIComponent(q)}`;
@@ -29,8 +30,6 @@ export const EXERCISES = {
   yogaMobility: { name: "Yoga/Mobility Sequence", links: [{ label: "Hip & back mobility", url: yt("beginner mobility routine hips back") }] },
   sprint50s: { name: "Sprint 50m + Walk 50m", links: [{ label: "Technique", url: yt("how to sprint technique beginner") }] },
 };
-
-export const STORAGE_KEY = "fatloss_6day_progress_v1";
 
 export const plan = [
   {
@@ -122,5 +121,3 @@ export const plan = [
     ],
   },
 ];
-
-export const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "");

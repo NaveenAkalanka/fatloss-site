@@ -2,33 +2,21 @@
 import React from "react";
 
 export const Badge = ({ children, className = "" }) => (
-  <span
-    className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${className}`}
-  >
+  <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${className}`}>
     {children}
   </span>
 );
 
 export const Card = ({ children, className = "" }) => (
-  <div
-    className={`rounded-2xl border border-gray-200 bg-white shadow-sm ${className}`}
-  >
-    {children}
-  </div>
+  <div className={`rounded-2xl border border-gray-200 bg-white shadow-sm ${className}`}>{children}</div>
 );
 
 export const CardHeader = ({ children, className = "" }) => (
-  <div
-    className={`flex items-start justify-between gap-4 p-5 ${className}`}
-  >
-    {children}
-  </div>
+  <div className={`flex items-start justify-between gap-4 p-5 ${className}`}>{children}</div>
 );
 
 export const CardTitle = ({ children, className = "" }) => (
-  <h3 className={`text-lg font-bold leading-tight ${className}`}>
-    {children}
-  </h3>
+  <h3 className={`text-lg font-bold leading-tight ${className}`}>{children}</h3>
 );
 
 export const CardContent = ({ children, className = "" }) => (
@@ -43,9 +31,10 @@ export const Button = ({
   type = "button",
   as: As = "button",
   to,
+  href,
 }) => {
   const base =
-    "inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold transition active:scale-[.98]";
+    "inline-flex items-center justify-center text-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold transition active:scale-[.98]";
   const styles = {
     default: "bg-black text-white hover:bg-gray-800",
     outline: "border border-gray-300 hover:border-gray-400",
@@ -55,7 +44,7 @@ export const Button = ({
   };
   const cls = `${base} ${styles[variant]} ${className}`;
   return (
-    <As to={to} onClick={onClick} type={type} className={cls}>
+    <As to={to} href={href} onClick={onClick} type={type} className={cls}>
       {children}
     </As>
   );
